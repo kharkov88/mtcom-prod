@@ -23,6 +23,7 @@ app.get('/*', (req, res) => {
       <App url={req.url} />
     </StaticRouter>
   )
+  res.setHeader('Cache-Control', 'max-age=86400')
   res.end(renderHTML(componentHTML, req.url))
 })
 
